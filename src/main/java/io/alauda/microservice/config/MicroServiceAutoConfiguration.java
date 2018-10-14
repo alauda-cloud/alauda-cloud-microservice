@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Import;
         TokenConfig.class,
         JwtFilterConfig.class,
         SwaggerConfig.class,
-        ResourceServerConfig.class})
+        ResourceServerConfig.class,
+        FeignClientConfig.class
+})
 @ConditionalOnMissingBean(MicroServiceAutoConfiguration.class)
 @Configuration
 public class MicroServiceAutoConfiguration {
