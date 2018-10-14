@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 public class TokenConfig {
 
-    @Value("${poker.resource-server.public-key}")
+    @Value("${jwt.public-key}")
     private String publicKey;
 
     @Bean

@@ -1,19 +1,12 @@
 package io.alauda.microservice.config;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.context.annotation.EnableMBeanExport;
-import org.springframework.context.annotation.Import;
-import org.springframework.jmx.support.RegistrationPolicy;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@ConditionalOnMissingBean(ResourceServerConfig.class)
-@Import({TokenConfig.class,JwtFilterConfig.class,SwaggerConfig.class})
 @EnableResourceServer
-@EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
